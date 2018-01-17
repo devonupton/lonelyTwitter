@@ -34,13 +34,43 @@ public class LonelyTwitterActivity extends Activity {
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
-		Tweet tweet = new Tweet("");
+
+
+
+		Tweet tweet = new NormalTweet("");
 		try {
 			tweet.setMessage("Hello World!");
 		}
 		catch (TweetTooLongException e){
 			Log.e("Error", "Tweet message too long!");
 		}
+		ImportantTweet iTweet1 = new ImportantTweet("I am important");
+		ImportantTweet iTweet2 = new ImportantTweet("I am also important");
+
+		NormalTweet nTweet1 = new NormalTweet("I am a normal tweet");
+
+		ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+		tweets.add(tweet);
+		tweets.add(iTweet1);
+		tweets.add(iTweet2);
+		tweets.add(nTweet1);
+
+		for (Tweet t : tweets){
+			Log.d("TweetPolymorphism", t.isImportant().toString());
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {

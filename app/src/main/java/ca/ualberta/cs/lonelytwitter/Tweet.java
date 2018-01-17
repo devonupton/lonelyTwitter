@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by devon on 16/01/18.
  */
 
-public class Tweet {
+public abstract class Tweet {
     private String message;
     private Date date;
 
@@ -39,4 +39,6 @@ public class Tweet {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public abstract Boolean isImportant();
 }
