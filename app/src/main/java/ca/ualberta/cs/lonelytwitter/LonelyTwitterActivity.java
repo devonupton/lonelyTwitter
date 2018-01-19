@@ -18,6 +18,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import ca.ualberta.cs.lonelytwitter.moods.HappyMood;
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -45,6 +48,7 @@ public class LonelyTwitterActivity extends Activity {
 			Log.e("Error", "Tweet message too long!");
 		}
 		ImportantTweet iTweet1 = new ImportantTweet("I am important");
+		iTweet1.getMoods().add(new HappyMood());
 		ImportantTweet iTweet2 = new ImportantTweet("I am also important");
 
 		NormalTweet nTweet1 = new NormalTweet("I am a normal tweet");
@@ -57,6 +61,18 @@ public class LonelyTwitterActivity extends Activity {
 
 		for (Tweet t : tweets){
 			Log.d("TweetPolymorphism", t.isImportant().toString());
+		}
+
+
+		ArrayList<Tweetable> tweetableList = new ArrayList<Tweetable>();
+		tweetableList.add(tweet);
+		tweetableList.add(iTweet1);
+		tweetableList.add(iTweet2);
+		tweetableList.add(nTweet1);
+
+		String messageOnScreen = "";
+		for (Tweetable t : tweetableList){
+			messageOnScreen += t.getMessage() + "\n";
 		}
 
 
