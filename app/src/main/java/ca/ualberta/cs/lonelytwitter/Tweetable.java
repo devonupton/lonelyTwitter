@@ -1,12 +1,35 @@
+/*
+ * Tweetable
+ *
+ * Version 1.0
+ *
+ * January 30, 2018
+ *
+ * Copyright (c) 2018. Template copyright notice.
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
 /**
- * Created by devon on 16/01/18.
+ * Represents an interface to get message and date from a tweet.
+ * @author doupton
+ * @version 1.0
+ * @see ImportantTweet
+ * @see NormalTweet
+ * @see Tweet
  */
-
 public interface Tweetable {
-    public String getMessage();
-    public Date getDate();
+
+    /**
+     * Get the tweet message
+     * @return tweet message
+     */
+    String getMessage();
+
+    /**
+     * Get the tweet date.
+     * @return tweet date
+     */
+    Date getDate();
 }

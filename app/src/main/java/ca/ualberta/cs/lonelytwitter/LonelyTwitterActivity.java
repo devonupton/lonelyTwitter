@@ -1,3 +1,13 @@
+/*
+ * LonelyTwitterActivity
+ *
+ * Version 1.0
+ *
+ * January 30, 2018
+ *
+ * Copyright (c) 2018. Template copyright notice.
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -28,6 +38,11 @@ import com.google.gson.reflect.TypeToken;
 
 import ca.ualberta.cs.lonelytwitter.moods.HappyMood;
 
+/**
+ * The main activity for LonelyTwitter.
+ * @author doupton
+ * @version 1.0
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "tweets.sav";
@@ -75,6 +90,9 @@ public class LonelyTwitterActivity extends Activity {
 
 	}
 
+	/**
+	 * Called when activity starts
+	 */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
